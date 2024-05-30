@@ -75,4 +75,7 @@ jobs:
         with:
           app-name: 'StreamlitPWA'
           slot-name: 'Production'
+
+      - name: 'Set startup command for Streamlit'
+        run: az webapp config set --resource-group myResourceGroup --name StreamlitPWA --startup-file "streamlit run streamlit_app.py --server.port=8000 --server.address=0.0.0.0"
           
